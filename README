@@ -1,0 +1,31 @@
+USAGE: Python Pocketanneal.py <arguments>
+
+Pocketanneal: Creating protein-ligand interfaces using AutoDock and Simulated annealing algorithms.   
+Copyright (C) 2015 Deepesh Nagarajan (1337deepesh@gmail.com)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, version 3 of the License.
+
+This program is distributed in the hope that it will be useful, but 
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License <http://www.gnu.org/licenses/>
+for more details.
+
+This README file will guide you through an example 'Pocketanneal' usage:
+
+1) Enter the 'Pocketanneal directory through terminal'
+    $ cd Pocketanneal
+
+2) Run 'Format.sh' to add hydrogens & clean your input PROTEIN.pdb file:
+    $ bash Format.sh -i database/example/protein_1dhi_A.pdb -o ~/Desktop/Pocketanneal_OUTPUT_01 -d database/
+
+3) After pre-processing, run Pocketanneal with these arguments:
+    $ python Pocketanneal.py -P ~/Desktop/Pocketanneal_OUTPUT_01/output.pdb -p database/example/pocket_1dhi_A.pdb -d database -n 1000 -a 2 -o ~/Desktop/Pocketanneal_OUTPUT_02
+
+A more detailed guide explaining every step can be found in:
+    $ gedit Pocketanneal/database/example/example.sh
+
+DEPENDENCIES:
+    $ sudo apt-get install AutoDockTools
