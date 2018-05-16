@@ -656,7 +656,7 @@ if os.path.isdir(working_directory) == False:
 #check contents of working_directory. Terminate if not completely empty:
 if len(os.listdir(working_directory)) != 0:
     print "error: --output directory is not empty."
-    print "Autoanneal.py will now terminate..."
+    print "Pocketanneal.py will now terminate..."
     sys.exit()
 
 #use a dictionary for quick access to naive residues based on residue name:
@@ -827,7 +827,7 @@ while i<cycles:
         report_SA_file.close()
         report_flag = report_flag+1
     
-    #I'm using cooling-schedule #2: http://www.btluke.com/simanf1.html
+    #I'm using cooling-schedules from: http://www.btluke.com/simanf1.html
     #temperature ranges from 1:0.01
     temperature = cooling_scheduler(i, cycles, cooling_schedule, start_temperature, end_temperature)
     print ""
@@ -847,7 +847,7 @@ while i<cycles:
     SA_alter(chosen_residue, random_mutant)
 
     #(check whether any clashes exist with newly mutated residue)
-    #(clashes may be protein-protein or protein-ligand clashes:)
+    #(clashes may be protein-protein or protein-ligand clashes)
     clash_flag = 0
     warning_flag = 0
     for j in range(0, len(protein[chosen_residue].clash_zone)):
@@ -1003,7 +1003,6 @@ if report_flag >= 1:
 
 #end script:
 sys.exit()
-
 
 
 
