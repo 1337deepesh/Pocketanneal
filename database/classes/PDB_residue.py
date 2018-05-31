@@ -97,7 +97,7 @@ class PDB_residue:
             
         #output phi/psi angles:    
         self.phi = rama_angles[0]
-        self.psi = rama_angles[0]
+        self.psi = rama_angles[1]
 
     ########################################
     #       PRIVATE FUNCTION: Kabsch       #
